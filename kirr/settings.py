@@ -25,7 +25,7 @@ SECRET_KEY = 'kd+(nl$9k)(=utua3frv*d@qyf@*8ki6*xe=lcb&r$@(6sugxc'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.xiaogege.top', 'xiaogege.top', 'www.tirr.com','tirr.com','ww.tirr.com','live.tirr.com']
+ALLOWED_HOSTS = ["127.0.0.1",'www.xiaogege.top', 'xiaogege.top', 'www.tirr.com','tirr.com','ww.tirr.com','live.tirr.com']
 
 
 # Application definition
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     'django_extensions',
     'django_hosts',
+    'analytics',
     'shortener',
 ]
 
@@ -59,6 +60,7 @@ ROOT_URLCONF = 'kirr.urls'
 ROOT_HOSTCONF = 'kirr.hosts'
 DEFAULT_HOST = 'www'
 DEFAULT_REDIRECT_URL = "http://www.xiaogege.top:8000"
+PARENT_HOST = "xiaogege.top"
 
 TEMPLATES = [
     {
@@ -112,7 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-hans'
 
 TIME_ZONE = 'UTC'
 
