@@ -16,6 +16,6 @@ def validate_url(value):
 	return new_value
 
 def validate_dot_com(value):
-	# if not "com" in value:
-	# 	raise ValidationError("This is no .com")
+	if not "com" in value:
+		raise ValidationError("This is no .com")
 	return value	

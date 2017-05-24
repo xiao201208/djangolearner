@@ -22,5 +22,5 @@ class ClickEvent(models.Model):
 	objects = ClickEventManager()
 
 	def __str__(self):
-		return "{i}".format(i=self.count)
+		return "{i}".format(i=self.kirr_url)
 		

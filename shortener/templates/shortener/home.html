@@ -1,10 +1,25 @@
-<div style='width:800px; margin: 0 auto;'>
-	<h1>{{ title }}</h1>
+<!DOCTYPE HTML>
+<html>
 
-	<form method='POST' action='.'>{% csrf_token %}
-		<!-- <input name='url' type='text' placeholder='Shorten your URL' /> -->
-		{{ form.as_p }}
-		<input type='submit' value='Shorten' />
-	</form>
+<head>
+	<title>xiaogege | Shorten URL</title>
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
 
+<body>
+
+<div class='container'>
+	<div class='row'>
+		<div class='text-center col-sm-12'>
+			<h1>{{ title }}</h1>
+
+			<form method='POST' action='.'>{% csrf_token %}
+				<!-- <input name='url' type='text' placeholder='Shorten your URL' /> -->
+				{{ form.as_p }}
+				<input class='btn btn-primary' type='submit' value='Shorten' />
+			</form>
+		</div>
+	</div>
 </div>
+</body>
+</html>

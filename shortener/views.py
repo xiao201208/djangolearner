@@ -36,8 +36,13 @@ class HomeView(View):
 		}
 		template = "shortener/home.html"
 		if form.is_valid():
-			print(form.cleaned_data)
-			new_url = form.cleaned_data.get("url")
+			url = form.cleaned_data.get("post_url")
+			if "http" not in url and "www" in url:
+				new_url = 'http://' + url
+			elif "http" not in url and "www" not in url:
+				new_url = 'http://www.' + url 
+			else:
+				new_url = url
 			obj, created = KirrURL.objects.get_or_create(url=new_url)
 			context ={
 				"object":obj,
