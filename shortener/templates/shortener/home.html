@@ -1,25 +1,36 @@
-<!DOCTYPE HTML>
-<html>
+{% extends 'base.html' %}
 
-<head>
-	<title>xiaogege | Shorten URL</title>
-	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-</head>
+{% block styles %}
+<style>
+body {
+	    background-color: #226268;
+	    {% if bg_image %}
+	    	background-image: url({{ bg_image }});
+	    {% endif %}
+	    background-size: cover;
+    }
 
-<body>
+.btn-link {
+      color: #50dfec;
+      text-shadow: none;
+    }
+.btn-link:hover {
+      color: #000000;
+    }
+</style>
+{% endblock styles %}
 
-<div class='container'>
-	<div class='row'>
-		<div class='text-center col-sm-12'>
-			<h1>{{ title }}</h1>
+{% block content %}
 
-			<form method='POST' action='.'>{% csrf_token %}
-				<!-- <input name='url' type='text' placeholder='Shorten your URL' /> -->
-				{{ form.as_p }}
-				<input class='btn btn-primary' type='submit' value='Shorten' />
-			</form>
-		</div>
-	</div>
-</div>
-</body>
-</html>
+<h1 class="cover-heading">{{ title }}</h1>
+<p class="lead">
+	<div class='col-sm-6 col-sm-offset-3'> 
+        <form method='POST' action='.'> {% csrf_token %}
+        	<p><input name='url' type='text' placeholder='url' /></p>
+            <!-- {{ form.as_p }} -->
+            <input class='btn btn-primary' type='submit' value='Shorten &raquo;' >
+        </form>
+    </div>
+</p>
+
+{% endblock content %}
